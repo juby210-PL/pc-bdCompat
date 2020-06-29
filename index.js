@@ -11,10 +11,16 @@ module.exports = class BDCompat extends Plugin {
     this.loadStylesheet('style.css')
     this.defineGlobals()
 
-    this.registerSettings('bdCompat', 'BetterDiscord Plugins', Settings)
+    //this.registerSettings('bdCompat', 'BetterDiscord Plugins', Settings)
+    powercord.api.settings.registerSettings('bdCompat', {
+      category: 'bdCompat',
+      label: 'BetterDiscord Plugins',
+      render: Settings
+    });
   }
 
   pluginWillUnload () {
+    powercord.api.settings.unregisterSettings('bdCompat') 
     if (window.pluginModule) window.pluginModule.destroy()
     if (window.ContentManager) window.ContentManager.destroy()
     this.destroyGlobals()
