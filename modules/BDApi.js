@@ -58,7 +58,10 @@ class BdApi {
   static get __styleParent () {
     return BdApi.__elemParent('style')
   }
-
+  // fake settings
+  static get settings() {
+    return {"Automatic Loading": true}
+  }
   static injectCSS (id, css) {
     const style = document.createElement('style')
 
