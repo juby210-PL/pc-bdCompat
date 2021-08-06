@@ -291,6 +291,10 @@ class BdApi {
     return BdApi.findModule((module) => props.every((prop) => typeof module[prop] !== 'undefined'))
   }
 
+  static findModuleByPrototypes(...protos) {
+    return getModule(module => module.prototype && protos.every(proto => typeof module.prototype[proto] !== 'undefined'), false)
+  }
+
   static findModuleByDisplayName(displayName) {
     return getModuleByDisplayName(displayName, false)
   }
