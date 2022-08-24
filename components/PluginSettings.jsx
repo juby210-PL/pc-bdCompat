@@ -7,7 +7,7 @@ const FormTitle = getModuleByDisplayName('FormTitle', false)
 
 let ErrorBoundary = props => props.children
 try {
-  ErrorBoundary = require('../../../coremods/settings/components/ErrorBoundary')
+  ErrorBoundary = require('../../../src/Powercord/coremods/settings/components/ErrorBoundary')
 } catch (e) {
   console.error('Failed to load powercord\'s ErrorBoundary component!', e)
 }

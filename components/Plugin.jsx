@@ -10,7 +10,7 @@ const SettingsModal = require('./PluginSettings.jsx')
 
 let Details = () => <div>Failed to load powercord module manager's details component!</div>
 try {
-  Details = require('../../../coremods/moduleManager/components/parts/Details')
+  Details = require('../../../src/Powercord/coremods/moduleManager/components/parts/Details')
 } catch (e) {
   console.error('Failed to load powercord module manager\'s details component! Settings won\'t render correctly.', e)
 }
